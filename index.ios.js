@@ -6,60 +6,35 @@
 
 var React = require('react-native');
 
-var Swiper = require('react-native-swiper');
+var ChooseProtein = require('./app/ChooseProtein.js');
 
-var App = require('./app/app.js');
-var styles = require('./styles.js');
+var { AppRegistry, Component, Dimensions, Image, Navigator, StyleSheet, Text, View, } = React;
 
-var {
-  AppRegistry,
-  Dimensions,
-  StyleSheet,
-  Text,
-  Image,
-  View,
-} = React;
 
-var app = new App();
+class zmxcd extends Component {
 
-var zmxcd = React.createClass({
-
-  render: function() {
+  render() {
 
     return (
-      <View style={styles.container}>
-
-        <Image style={{ flex: 1 }} source={{ uri: 'http://i.imgur.com/q1WSsoj.png' }}>
-
-          <Swiper style={styles.wrapper} height={ 300 } showsButtons={true}>
-            <View style={styles.slide1}>
-              <Text style={styles.text}>Hello Swiper</Text>
-            </View>
-            <View style={styles.slide2}>
-              <Text style={styles.text}>Beautiful</Text>
-            </View>
-            <View style={styles.slide3}>
-              <Text style={styles.text}>And simple</Text>
-            </View>
-          </Swiper>
-
-          <View style={styles.sometext}>
-            <Text style={styles.welcome}>
-              Hello { app.doStuff(5) }, welcome to React Native!
-            </Text>
-            <Text style={styles.instructions}>
-              Press Cmd+R to reload,{'\n'}
-              Cmd+D or shake for dev menu
-            </Text>
-          </View>
-
-        </Image>
-
-      </View>
+      <Navigator
+        style={{ flex: 1 }}
+        initialRoute={{
+          title: 'First Page',
+          index: 0
+        }}
+        renderScene={(route, navigator) =>
+          <ChooseProtein
+            name={ route.name }
+            navigator={ navigator }
+          />
+        }
+      />
     );
 
   }
 
-});
+}
+
+var styles = require('./styles');
 
 AppRegistry.registerComponent('zmxcd', () => zmxcd);
