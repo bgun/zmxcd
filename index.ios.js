@@ -5,6 +5,9 @@
 'use strict';
 
 var React = require('react-native');
+
+var App = require('./app/app.js')
+
 var {
   AppRegistry,
   StyleSheet,
@@ -12,12 +15,14 @@ var {
   View,
 } = React;
 
+var app = new App();
+
 var zmxcd = React.createClass({
   render: function() {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
-          Welcome to React Native!
+          Hello { app.doStuff(5) }, welcome to React Native!
         </Text>
         <Text style={styles.instructions}>
           To get started, edit index.ios.js
