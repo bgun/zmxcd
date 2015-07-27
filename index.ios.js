@@ -5,10 +5,14 @@
 'use strict';
 
 var React = require('react-native');
+var Router = require('react-native-router');
 
-var ChooseProtein = require('./app/ChooseProtein.js');
+var ChooseProtein = require('./app/ChooseProtein');
+var TrackerBar    = require('./app/TrackerBar');
 
-var { AppRegistry, Component, Dimensions, Image, Navigator, StyleSheet, Text, View, } = React;
+var styles = require('./styles.js');
+
+var { AppRegistry, Component, Dimensions, Image, StyleSheet, Text, View, } = React;
 
 
 class zmxcd extends Component {
@@ -16,19 +20,14 @@ class zmxcd extends Component {
   render() {
 
     return (
-      <Navigator
-        style={{ flex: 1 }}
-        initialRoute={{
-          title: 'First Page',
-          index: 0
-        }}
-        renderScene={(route, navigator) =>
-          <ChooseProtein
-            name={ route.name }
-            navigator={ navigator }
-          />
-        }
-      />
+      <View style={{ backgroundColor: '#FF0000', flex: 1 }}>
+        <Router firstRoute={{
+          name: 'Choose Protein',
+          component: ChooseProtein,
+          headerStyle: styles.page_header
+        }} />
+        <TrackerBar />
+      </View>
     );
 
   }

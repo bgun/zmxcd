@@ -4,6 +4,8 @@ var { Component, View } = React;
 
 var Bubble = require('./Bubble.js');
 
+var styles = require('../styles.js');
+
 class ChooseStyle extends Component {
 
   constructor() {
@@ -12,13 +14,13 @@ class ChooseStyle extends Component {
 
   render() {
     return (
-      <View style={{ flex: 1 }}>
-        <View style={{ flex: 1, flexDirection: 'row', backgroundColor: '#FFEEDD' }}>
-          <Bubble text='Rice' />
-          <Bubble text='Noodles' />
+      <View style={ styles.page }>
+        <View style={ styles.choices_row_1of2 }>
+          <Bubble hanzi='盖' subtext='Steamed' />
+          <Bubble hanzi='面' subtext='Noodles' />
         </View>
-        <View style={{ flex: 1 }}>
-          <Bubble text='Pan-fried' />
+        <View style={ styles.choices_row_2of2 }>
+          <Bubble hanzi='炒' subtext='Pan-fried' />
         </View>
       </View>
     );
