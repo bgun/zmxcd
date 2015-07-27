@@ -10,6 +10,37 @@ module.exports = StyleSheet.create({
     flexDirection: 'column'
   },
 
+  start_page: {
+    flex: 1,
+    justifyContent: 'center',
+    textAlign: 'center'
+  },
+  start_header: {
+    color: '#99AACC',
+    fontSize: 50,
+    paddingBottom: 40,
+    textAlign: 'center'
+  },
+  start_button: {
+    backgroundColor: '#AA0000',
+    borderRadius: 25,
+    height: 50,
+    justifyContent: 'center',
+    alignSelf: 'center',
+    width: 200
+  },
+  start_button_text: {
+    color: '#FFFFFF',
+    fontSize: 15,
+    height: 50,
+    lineHeight: 35,
+    textAlign: 'center',
+  },
+  start_instructions: {
+    paddingTop: 50,
+    textAlign: 'center'
+  },
+
   page_header: {
     backgroundColor: '#EE7700'
   },
@@ -47,39 +78,61 @@ module.exports = StyleSheet.create({
     flexDirection: 'column',
   },
   bubble_hanzi: {
-    flex: 0.6,
-    fontSize: 60,
-    paddingTop: 20,
+    color: '#FFFFFF',
+    flex: 0.7,
+    fontFamily: 'Cochin',
+    fontSize: 66,
+    paddingTop: 10,
     textAlign: 'center'
   },
   bubble_hanzi_small: {
-    flex: 0.6,
-    fontSize: 45,
+    color: '#FFFFFF',
+    flex: 0.7,
+    fontFamily: 'Cochin',
+    fontSize: 50,
     paddingTop: 25,
     textAlign: 'center'
   },
   bubble_subtext: {
-    flex: 0.4,
+    color: '#FFFFFF',
+    flex: 0.3,
     fontSize: 15,
     textAlign: 'center'
   },
 
   tracker_bar: {
-    backgroundColor: '#DDDDDD',
+    backgroundColor: '#DDDDDF',
     flex: 0.2,
     flexDirection: 'row',
     height: 80,
-    justifyContent: 'center'
+    justifyContent: 'center',
   },
-
   tracker_item: {
+    backgroundColor: '#F3F4F8',
     borderRadius: 30,
     borderWidth: 1,
-    borderColor: '#AAAAAA',
+    borderColor: '#FFFFFF',
     height: 60,
+    justifyContent: 'center',
     margin: 10,
     marginTop: 20,
     width: 60
+  },
+  tracker_item_text: {
+    color: '#333335',
+    fontSize: 25,
+    textAlign: 'center',
+  },
+
+  result_page: {
+    flex: 1,
+    justifyContent: 'center',
+    textAlign: 'center'
+  },
+  result_text: {
+    fontSize: 20,
+    paddingBottom: 40,
+    textAlign: 'center'
   }
 
 });

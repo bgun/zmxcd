@@ -12,15 +12,29 @@ class ChooseStyle extends Component {
     super();
   }
 
+  _handlePress(choice) {
+    global.events.publish('choices_updated', {
+      styleChoice: choice
+    });
+    this.props.toRoute(global.routes.chooseFlavor);
+  }
+
   render() {
+
+    var gw = global.words.get;
+    // TODO: better mapping across global dictionary
+    const STEAMED = 'STEAMED';
+    const NOODLES = 'NOODLES';
+    const FRIED   = 'FRIED';
+
     return (
       <View style={ styles.page }>
         <View style={ styles.choices_row_1of2 }>
-          <Bubble hanzi='盖' subtext='Steamed' />
-          <Bubble hanzi='面' subtext='Noodles' />
+          <Bubble hanzi={ gw('zh', STEAMED) } subtext={ gw('en', STEAMED) } onPress={ this._handlePress.bind(this, STEAMED) } />
         </View>
         <View style={ styles.choices_row_2of2 }>
-          <Bubble hanzi='炒' subtext='Pan-fried' />
+          <Bubble hanzi={ gw('zh', NOODLES) } subtext={ gw('en', NOODLES) } onPress={ this._handlePress.bind(this, NOODLES) } />
+          <Bubble hanzi={ gw('zh', FRIED)   } subtext={ gw('en', FRIED)   } onPress={ this._handlePress.bind(this, FRIED) } />
         </View>
       </View>
     );
