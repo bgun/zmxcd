@@ -11,6 +11,11 @@ class TrackerBar extends Component {
     super();
   }
 
+  _handlePress(route_key) {
+    console.log('====== ROUTE', route_key);
+    global.router.toRoute(global.routes[route_key]);
+  }
+
   render() {
 
     var gw = global.words.get;
@@ -25,22 +30,22 @@ class TrackerBar extends Component {
     return (
       <View style={ styles.tracker_bar }>
         <View style={ styles.tracker_item }>
-          <TouchableHighlight>
+          <TouchableHighlight onPress={ this._handlePress.bind(this, 'chooseProtein') }>
             <Text style={ styles.tracker_item_text }>{ protein_choice }</Text>
           </TouchableHighlight>
         </View>
         <View style={ styles.tracker_item }>
-          <TouchableHighlight>
+          <TouchableHighlight onPress={ this._handlePress.bind(this, 'chooseStyle') }>
             <Text style={ styles.tracker_item_text }>{ style_choice }</Text>
           </TouchableHighlight>
         </View>
         <View style={ styles.tracker_item }>
-          <TouchableHighlight>
+          <TouchableHighlight onPress={ this._handlePress.bind(this, 'chooseFlavor') }>
             <Text style={ styles.tracker_item_text }>{ flavor_choice }</Text>
           </TouchableHighlight>
         </View>
         <View style={ styles.tracker_item }>
-          <TouchableHighlight>
+          <TouchableHighlight onPress={ this._handlePress.bind(this, 'chooseSpice') }>
             <Text style={ styles.tracker_item_text }>{ spice_choice }</Text>
           </TouchableHighlight>
         </View>

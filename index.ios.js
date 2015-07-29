@@ -75,7 +75,6 @@ class zmxcd extends Component {
   }
 
   updateTracker(new_choices) {
-    console.log("======== TRACKER", new_choices);
     this.setState(new_choices);
   }
 
